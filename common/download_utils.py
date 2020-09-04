@@ -10,7 +10,7 @@ REPOSITORY_PATH = "https://github.com/hse-aml/natural-language-processing"
 
 
 def download_file(url, file_path):
-    r = requests.get(url, stream=True)
+    r = requests.get(url, stream=True, verify=False)
     total_size = int(r.headers.get('content-length'))
     try:
         with open(file_path, 'wb', buffering=16*1024*1024) as f:
